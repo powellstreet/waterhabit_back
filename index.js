@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(morgan());
 
 app.use('/user', user);
-app.use('like', like)
+app.use('/like', like);
 
 app.get('/', (req, res) => res.send('Hello World!'));
 

@@ -6,6 +6,11 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
+    email: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      unique: true,
+    },
     password: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -17,7 +22,7 @@ module.exports = {
     },
     weight: {
       type: Sequelize.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     goal: {
       type: Sequelize.INTEGER,

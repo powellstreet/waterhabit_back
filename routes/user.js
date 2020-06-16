@@ -1,7 +1,9 @@
 const express = require('express');
+const controllers = require('../controllers/user');
 
 const router = express.Router();
 
-// route 세부설정하기
+router.post('/signIn', controllers.signIn);
+router.post('/signUp', controllers.signUp);
 
 module.exports = router;
