@@ -17,7 +17,7 @@ module.exports = {
           if (err) throw err;
           if (key.toString('hex') === instance.password) {
             const token = jwt.sign({ email }, 'shhhhh');
-            res.status(200).json({ token });
+            res.status(200).json({ instance, token });
           } else {
             res.json({ result: 'wrong user info' });
           }
@@ -55,6 +55,16 @@ module.exports = {
     if (!goal) { goal = 2000; }
 
     User.update({ nickname, weight, goal }, { where: { email } })
+      .then((instance) => res.status(200).json(instance))
+      .catch((err) => res.json(err));
+  },
+
+  intakeUpdate: (req, res) => {
+    // hardcoding for testing
+    const email = 'kim@naver.com';
+    const { intake } = req.body;
+
+    User.update({ intake }, { where: { email } })
       .then((instance) => res.status(200).json(instance))
       .catch((err) => res.json(err));
   },
