@@ -37,7 +37,12 @@ module.exports = {
     crypto.pbkdf2(password, salt, 103845, 64, 'sha512', async (err, key) => {
       if (err) throw err;
 
-      User.findOrCreate({ where: { email }, defaults: { password: key.toString('hex'), salt, nickname } })
+      User.findOrCreate({
+        where: { email },
+        defaults: {
+          password: key.toString('hex'), salt, nickname,
+        },
+      })
         .spread((instance, created) => {
           res.status(200).json({ instance, created });
         })

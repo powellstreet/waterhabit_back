@@ -34,10 +34,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       defaultValue: 0,
     },
-    stamp: {
-      type: DataTypes.STRING,
-      defaultValue: JSON.stringify([]),
-    },
     likes: {
       type: DataTypes.INTEGER,
       defaultValue: 0,

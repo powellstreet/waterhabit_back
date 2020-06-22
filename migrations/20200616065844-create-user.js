@@ -40,10 +40,6 @@ module.exports = {
       type: Sequelize.INTEGER,
       defaultValue: 0,
     },
-    stamp: {
-      type: Sequelize.STRING,
-      defaultValue: JSON.stringify([]),
-    },
     likes: {
       type: Sequelize.INTEGER,
       defaultValue: 0,
