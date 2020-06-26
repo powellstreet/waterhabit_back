@@ -51,7 +51,7 @@ module.exports = {
   },
 
   profileUpdate: (req, res) => {
-    let { nickname, weight, goal } = req.body;
+    let { userId, nickname, weight, goal } = req.body;
     // hardcoding for testing
     const email = 'kim@naver.com';
 
@@ -59,17 +59,7 @@ module.exports = {
     if (!weight) { weight = null; }
     if (!goal) { goal = 2000; }
 
-    User.update({ nickname, weight, goal }, { where: { email } })
-      .then((instance) => res.status(200).json(instance))
-      .catch((err) => res.json(err));
-  },
-
-  intakeUpdate: (req, res) => {
-    // hardcoding for testing
-    const email = 'kim@naver.com';
-    const { intake } = req.body;
-
-    User.update({ intake }, { where: { email } })
+    User.update({ nickname, weight, goal }, { where: { userId } })
       .then((instance) => res.status(200).json(instance))
       .catch((err) => res.json(err));
   },

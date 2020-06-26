@@ -32,10 +32,6 @@ module.exports = {
       type: Sequelize.INTEGER,
       defaultValue: 2000,
     },
-    intake: {
-      type: Sequelize.INTEGER,
-      defaultValue: 0,
-    },
     point: {
       type: Sequelize.INTEGER,
       defaultValue: 0,

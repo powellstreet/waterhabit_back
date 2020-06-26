@@ -1,7 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
   const Records = sequelize.define('Records', {
     userId: DataTypes.INTEGER,
-    day: DataTypes.STRING,
+    day: DataTypes.INTEGER,
+    intake: DataTypes.INTEGER,
+    achieved: DataTypes.BOOLEAN,
   }, {});
   Records.associate = function (models) {
     // associations can be defined here

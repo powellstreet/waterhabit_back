@@ -26,10 +26,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       defaultValue: 2000,
     },
-    intake: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
-    },
     point: {
       type: DataTypes.INTEGER,
       defaultValue: 0,

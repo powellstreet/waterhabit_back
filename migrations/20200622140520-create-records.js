@@ -16,7 +16,15 @@ module.exports = {
       },
     },
     day: {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
+      defaultValue: false,
+    },
+    intake: {
+      type: Sequelize.INTEGER,
+      defaultValue: 0,
+    },
+    achieved: {
+      type: Sequelize.BOOLEAN,
       defaultValue: false,
     },
     createdAt: {
