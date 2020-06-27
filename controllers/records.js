@@ -18,7 +18,7 @@ module.exports = {
 
   getStamp: (req, res) => {
     const { userId } = req.body;
-    Records.findAll({ where: { userId, achieved: true } })
+    Records.findAll({ where: { userId } })
       .then((instance) => res.status(200).json(instance))
       .catch((err) => res.json(err));
   },
