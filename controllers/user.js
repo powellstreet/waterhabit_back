@@ -52,14 +52,12 @@ module.exports = {
 
   profileUpdate: (req, res) => {
     let { userId, nickname, weight, goal } = req.body;
-    // hardcoding for testing
-    const email = 'kim@naver.com';
 
-    if (!nickname) { nickname = extractId(email); }
+    if (!nickname) { nickname = userId * 74938; }
     if (!weight) { weight = null; }
     if (!goal) { goal = 2000; }
 
-    User.update({ nickname, weight, goal }, { where: { userId } })
+    User.update({ nickname, weight, goal }, { where: { id: userId } })
       .then((instance) => res.status(200).json(instance))
       .catch((err) => res.json(err));
   },
